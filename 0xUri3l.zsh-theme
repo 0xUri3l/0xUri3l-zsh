@@ -1,4 +1,4 @@
-#Author : Heapbytes <Gourav> (https://github.com/heapbytes)
+#Author : 0xUr!3l <Greyd4rk> (https://github.com/0xUri3l)
 
 # Load and configure vcs_info
 autoload -Uz vcs_info
@@ -179,8 +179,8 @@ get_battery_info() {
 }
 
 PROMPT='
- ┌[%F{yellow} %~%f 
-┌└%F{red} $USER%f💀%F{yellow}%m%f %F{white}•  %f%F{cyan}$(get_battery_info)%f %F{white}•  %f%F{cyan}$(get_ip_address)%f$( [[ -n "$vcs_info_msg_0_" ]] && echo " %F{white}•  %f$(vcs_info_wrapper)" )
+ ┌[%F{magenta} %~%f 
+┌└%F{yellow} $USER%f💀🚬%F{yellow}%m%f %F{white}⮞  %f%F{cyan}$(get_battery_info)%f %F{white}⮞  %f%F{green}$(get_ip_address)%f$( [[ -n "$vcs_info_msg_0_" ]] && echo " %F{white}•  %f$(vcs_info_wrapper)" )
 └➤ '
 
 # Show execution time of long-running commands
@@ -198,10 +198,10 @@ vcs_info_wrapper() {
     # Check for master or main branch
     if [[ "$raw_branch_name" == "master" || "$raw_branch_name" == "main" ]]; then
       branch_icon_color="%F{green}"
-      branch_icon="🌱"
+      branch_icon="🪵"
     else # Other branches
       branch_icon_color="%F{cyan}"
-      branch_icon="🪵"
+      branch_icon="🌱"
     fi
 
     # Afficher l'icône (correcte), la branche en vert, et le status
@@ -221,7 +221,7 @@ get_ip_address() {
       local icon=""
       local color="%F{cyan}"
       if [[ "$iface" == tun* || "$iface" == tap* || "$iface" == wg* || "$iface" == *vpn* || "$iface" == *VPN* || "$linkinfo" == *POINTOPOINT* ]]; then
-        icon="👻"
+        icon="🛡️"
         color="%F{magenta}"
       elif [[ "$iface" == eth* || "$iface" == enp* ]]; then
         icon=""
@@ -241,4 +241,3 @@ get_ip_address() {
     echo "%F{red}%f"
   fi
 }
-
